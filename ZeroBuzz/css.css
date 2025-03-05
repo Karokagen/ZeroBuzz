@@ -4,7 +4,7 @@ body {
     font-family: open-sans, sans-serif;
     margin: 0;
     background-color: #f0f3f5;
-    color: #1b1f22;
+    color: #212121;
 }
 
 h1, h2, h3, h4 {
@@ -72,16 +72,20 @@ nav a {
     margin: 0 auto;
     position: relative;
 }
+.product-section h1 {
+    padding-bottom: 64px;
+}
 .product-section::before {
     content: "";
     position: absolute;
-    top: 50%;
+    top: 0;
     left: 0;
-    width: 100%;
-    height: 30%;
-    background: linear-gradient(90deg, #F6E8BB, #F8CEB5, #ECAEA8);
+    width: 100vw;
+    height: 100%;
+    background: url('img/Background_2.png') center/cover no-repeat;
     z-index: -1;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translateX(-50%);
 }
 .product-list {
     display: flex;
@@ -93,18 +97,22 @@ nav a {
     width: 130px;
     height: auto;
     display: block;
+    transition: transform 0.1s ease-in-out;
+    cursor: pointer;
 }
 .product span {
     display: block;
     margin-top: 10px;
     margin-bottom: -10px;
+    font-family: montserrat, sans-serif;
     font-weight: bold;
+    font-size: 16px;
 }
 .content-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-   
+    padding-top: 64px;
     margin: 0 auto;
 }
 .content-section img {
@@ -113,14 +121,34 @@ nav a {
     border-radius: 10px;
 }
 .content-text {
-    padding: 70px;
-    width: 50%;
+    padding: 48px;
+    max-width: 635px;
 }
+
+/* Add specific padding for each content text section */
+.content-text1 {
+    padding: 48px;
+    padding-left: 265px;
+    max-width: 635px;
+}
+
+.content-text2 {
+    padding: 48px;
+    padding-right: 265px;
+    max-width: 635px;
+}
+
+.content-text3 {
+    padding: 48px;
+    padding-left: 265px;
+    max-width: 635px;
+}
+
 .newsletter {
     background: linear-gradient(135deg, #edaea8, #F8CEB5);
     text-align: center;
-    padding: 50px 20px;
-    margin: 40px auto;
+    padding: 48px 20px;
+    margin: 40px auto 96px auto;
     border-radius: 15px;
     max-width: 800px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -142,16 +170,16 @@ nav a {
 }
 .newsletter button {
     padding: 15px 30px;
-    background: #ff6b6b;
-    color: white;
+    background: #FF928C;
+    color: #212121;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     font-size: 1.2em;
+    transition: background-color 0.1s ease-in-out, transform 0.1s ease-in-out;
 }
 .newsletter button:hover {
-    background: #ea7a7a;
-    transform: scale(1.05);
+    background: #F47069;
 }
 .icon img {
     height: 18px;
@@ -161,7 +189,7 @@ nav a {
 
 footer {
     background: #D7968A;
-    color: white;
+    color: #212121;
     text-align: center;
     padding: 20px;
     margin-top: 40px;
@@ -188,11 +216,11 @@ footer {
     margin-bottom: 10px;
 }
 .footer-column ul li a {
-    color: white;
+    color: #212121;
     text-decoration: none;
 }
 .product img:hover{
-    transform: scale(1.2);
+    transform: scale(1.05);
 }
 
 /* Baggrundsbillede */
@@ -202,8 +230,8 @@ footer {
     width: 100%;
     min-height: 700px; /* Set a specific height - adjust this value based on your image */
     display: flex;
-    align-items: flex-start; /* Align to top */
-    justify-content: flex-start; /* Flytter boksen til venstre */
+    align-items: center; /* Vertically center the children */
+    justify-content: flex-start; /* Keep the content left aligned */
     padding-left: 50px; /* Justér efter behov */ 
     margin-bottom: 64px; /* Space below the image */
     box-sizing: border-box;
@@ -212,20 +240,26 @@ footer {
 
 /* Tekstcontainer */
 .container {
-    position: absolute;
-    top: 0;
-    left: 0;
+    /* Removed absolute positioning for vertical centering */
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Venstrejusteret */
+    align-items: flex-start; /* Left aligned */
     max-width: 400px;
-    padding: 50px;
-    padding-left: 50px; /* Justér efter behov */
 }
+
+/* Reduce space between first paragraph and h1 */
+.container p:first-child {
+    margin-bottom: 4px;
+}
+
+.container h1 {
+    margin-top: 5px;
+}
+
 /* Knap styling */
 .btn {
-    background-color: #EFB6AB;
-    color: #1b1f22;
+    background-color: #FF928C;
+    color: #212121;
     padding: 10px 20px;
     border-radius: 21px;
     text-decoration: none;
@@ -235,5 +269,5 @@ footer {
 }
 
 .btn:hover {
-    background-color: #E8A296;
+    background-color: #F47069;
 }
