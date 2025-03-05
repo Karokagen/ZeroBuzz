@@ -49,7 +49,22 @@ nav a {
     font-weight: normal;
     text-decoration: none;
     color: #333333;
+    padding: 8px 16px;
+    border-radius: 12px;
+    transition: background-color 0.2s ease-in-out;
 }
+
+nav a:hover {
+    background-color: #FFACA8;
+}
+
+/* This will be in shop.css but we need to override the hover for active links */
+nav a.active {
+    font-weight: bold;
+    color: #212121;
+    background-color: #FFACA8;
+}
+
 .icons {
     display: flex;
     gap: 16px;
