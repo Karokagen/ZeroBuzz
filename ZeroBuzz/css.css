@@ -403,7 +403,7 @@ footer {
 
 .content-section-3 .foreground-img {
     position: absolute;
-    bottom: -300px;
+    bottom: -275px;
     left: auto;
     right: -50px;
     height: auto;
@@ -445,4 +445,10 @@ footer {
     /* Add these properties to ensure proper right alignment */
     transform-origin: right bottom;
     text-align: right;
+}
+
+/* Floating animation for beer bottles */
+.float-animation {
+    transform: translateY(-150px) !important;
+    transition: transform 1.5s cubic-bezier(0.25, 0.1, 0.25, 1) !important;
 }
