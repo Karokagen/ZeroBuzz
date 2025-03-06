@@ -127,7 +127,7 @@ nav a.active {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 64px;
+    padding-top: 128px;
     margin: 0 auto;
 }
 .content-section img {
@@ -284,4 +284,165 @@ footer {
 
 .btn:hover {
     background-color: #FF928C;
+}
+
+.layered-image {
+    position: relative;
+    width: 550px;
+    height: auto;
+    isolation: isolate;
+}
+
+/* First content section */
+.content-section-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 128px;
+    margin: 0 auto;
+}
+
+.content-section-1 .layered-image {
+    position: relative;
+    width: 550px;
+    height: auto;
+    isolation: isolate;
+}
+
+.content-section-1 .background-img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    position: relative;
+    z-index: 1;
+}
+
+.content-section-1 .foreground-img {
+    position: absolute;
+    bottom: -250px;
+    left: 0;
+    height: auto;
+    max-width: 100%;
+    z-index: 2;
+}
+
+/* Second content section */
+.content-section-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 128px;
+    margin: 0 auto;
+}
+
+.content-section-2 .layered-image {
+    position: relative;
+    width: 550px;
+    height: auto;
+    isolation: isolate;
+    margin-right: 20px;
+}
+
+.content-section-2 .background-img {
+    width: 600px;
+    max-width: none;
+    height: auto;
+    border-radius: 12px;
+    position: relative;
+    z-index: 1;
+}
+
+.content-section-2 .foreground-img {
+    position: absolute;
+    bottom: -300px;
+    left: auto;
+    right: -50px;
+    height: auto;
+    max-width: none;
+    width: 600px;
+    z-index: 2;
+    transform-origin: right bottom;
+    text-align: right;
+}
+
+/* Third content section (Weekly Favorite/Ugens Favorit) */
+.content-section-3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 128px;
+    margin: 0 auto;
+    flex-direction: row; /* Ensure text is on left, images on right */
+    padding-bottom: 250px;
+}
+
+.content-section-3 .content-text3 {
+    padding: 48px;
+    padding-left: 265px;
+    max-width: 635px;
+    order: 1; /* Ensure text comes first */
+}
+
+.content-section-3 .layered-image {
+    position: relative;
+    width: 550px;
+    height: auto;
+    isolation: isolate;
+    order: 2; /* Ensure images come second */
+
+}
+
+.content-section-3 .background-img {
+    width: 600px;
+    max-width: none;
+    height: auto;
+    border-radius: 12px;
+    position: relative;
+    z-index: 1;
+}
+
+.content-section-3 .foreground-img {
+    position: absolute;
+    bottom: -300px;
+    left: auto;
+    right: -50px;
+    height: auto;
+    max-width: none;
+    width: 600px;
+    z-index: 2;
+    transform-origin: right bottom;
+    text-align: right;
+}
+
+/* General styles for background and foreground images */
+.background-img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    position: relative;
+    z-index: 1;
+}
+
+.foreground-img {
+    position: absolute;
+    bottom: -250px;
+    left: 0;
+    height: auto;
+    max-width: 100%;
+    z-index: 2;
+}
+
+/* Left side image container */
+.left-image {
+    margin-right: 20px;
+}
+
+/* Right-aligned foreground image */
+.foreground-img.right-aligned {
+    left: auto;
+    right: 0;
+    bottom: -250px;
+    /* Add these properties to ensure proper right alignment */
+    transform-origin: right bottom;
+    text-align: right;
 }
