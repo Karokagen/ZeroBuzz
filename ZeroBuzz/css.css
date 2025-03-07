@@ -240,34 +240,43 @@ footer {
 
 /* Baggrundsbillede */
 .pic {
-    background: url('img/img.png') top center no-repeat;
-    background-size: 100% auto; /* Full width, auto height to preserve aspect ratio */
-    width: 100%;
-    min-height: 700px; /* Set a specific height - adjust this value based on your image */
+    background: url('img/mockup_background_cropped2.webp') bottom center no-repeat;/* Full height, auto width - may crop horizontally */
+    min-width: 100%;
+    min-height: 800px; /* Fixed height to ensure full image height is visible */
     display: flex;
     align-items: center; /* Vertically center the children */
     justify-content: flex-start; /* Keep the content left aligned */
     padding-left: 50px; /* Justér efter behov */ 
     box-sizing: border-box;
     position: relative;
+    overflow-x: hidden; /* Hide horizontal overflow if image is wider than viewport */
 }
 
 /* Tekstcontainer */
-.container {
+.pic .container {
     /* Removed absolute positioning for vertical centering */
     display: flex;
     flex-direction: column;
     align-items: flex-start; /* Left aligned */
     max-width: 400px;
+    color: #212121; /* Make all text white */
 }
 
 /* Reduce space between first paragraph and h1 */
-.container p:first-child {
+.pic .container p:first-child {
     margin-bottom: 4px;
 }
 
-.container h1 {
+.pic .container h1 {
     margin-top: 5px;
+    color: #212121; /* Ensure heading is white */
+}
+
+/* For containers outside of .pic, maintain original styling */
+.container:not(.pic .container) {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
 }
 
 /* Knap styling */
