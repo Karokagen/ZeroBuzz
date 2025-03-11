@@ -1,0 +1,225 @@
+.content-section img {
+    width: 600px;
+    height: auto;
+    border-radius: 12px;
+}
+.content-text {
+    padding: 48px;
+    max-width: 635px;
+}
+/* Shop page styles */
+.shop-hero {
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 64px;
+    padding-top: 100px; /* Space for fixed header */
+    box-sizing: border-box;
+    position: relative;
+    overflow: visible;
+}
+
+.shop-hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 1950px;
+    background: url('./img/Background_4.png') center center no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
+.shop-hero .container {
+    max-width: 800px;
+    align-items: center;
+}
+
+.shop-hero h1 {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.shop-products {
+    max-width: 1200px;
+    margin: 0 auto 64px auto;
+    padding: 0 20px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 48px;
+}
+
+.shop-product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.shop-product img {
+    width: 130px;
+    height: auto;
+    margin-bottom: 16px;
+    transition: transform 0.1s ease-in-out;
+}
+
+.shop-product h3 {
+    font-family: montserrat, sans-serif;
+    font-size: 18px;
+    margin: 8px 0;
+}
+
+.shop-product .price {
+    font-weight: bold;
+    margin: 8px 0 16px 0;
+}
+
+.shop-product .btn {
+    margin-top: auto;
+}
+
+/* Bundle and Tilbud sections - styled like the content sections from the landing page */
+.bundle-section, .Tilbud-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 64px;
+    flex-wrap: nowrap; /* Changed from wrap to nowrap to prevent wrapping */
+}
+
+/* Bundle section - styled like the "Nyheder" section */
+.bundle-section {
+    flex-direction: row;
+    margin-bottom: 64px;
+}
+
+.bundle-section .content-text1 {
+    padding: 48px;
+    padding-left: 265px;
+    max-width: 635px;
+    order: 1;
+    flex: 1; /* Added flex property to control sizing */
+}
+
+.bundle-section img {
+    width: 600px;
+    height: auto;
+    border-radius: 12px;
+    order: 2;
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+/* Tilbud section - styled like the "Månedens Smag" section */
+.Tilbud-section {
+    flex-direction: row-reverse;
+    margin-bottom: 64px;
+}
+
+.Tilbud-section .content-text1 {
+    padding: 48px;  
+    padding-right: 265px;
+    max-width: 635px;
+    order: 2;
+    flex: 1; /* Added flex property to control sizing */
+}
+
+.Tilbud-section img {
+    width: 600px;
+    height: auto;
+    border-radius: 12px;
+    order: 1;
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .bundle-section .content-text1,
+    .Tilbud-section .content-text1 {
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+}
+
+@media (max-width: 992px) {
+    .bundle-section,
+    .Tilbud-section {
+        flex-direction: column;
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        text-align: center;
+    }
+    
+    .bundle-section .content-text1,
+    .Tilbud-section .content-text1 {
+        padding: 32px;
+        max-width: 100%;
+        order: 1;
+    }
+    
+    .bundle-section img,
+    .Tilbud-section img {
+        width: 80%;
+        max-width: 500px;
+        order: 2;
+        margin: 0 auto; /* Center the image */
+    }
+    
+    .bundle-section .price-container,
+    .Tilbud-section .price-container {
+        order: 3;
+        justify-content: center; /* Center the price and button */
+    }
+}
+
+/* Active navigation link */
+
+/* Price container styling to place price and button in a row */
+.price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 16px;
+}
+
+.price-container p {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0;
+}
+
+.price-container .btn {
+    margin: 0;
+}
+
+/* Bundle and Tilbud sections price container */
+.bundle-section .price-container,
+.Tilbud-section .price-container {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    gap: 24px;
+    margin: 16px 0;
+    order: 3;
+}
+
+
+
+.bundle-section .price-container p,
+.Tilbud-section .price-container p {
+    order: 1;
+    text-align: right;
+}
+
+.bundle-section .price-container .btn,
+.Tilbud-section .price-container .btn {
+    order: 2;
+}
