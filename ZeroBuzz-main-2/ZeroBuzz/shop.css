@@ -63,13 +63,17 @@
     padding: 20px;
     border-radius: 12px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    height: 360px; /* Slightly increased fixed height */
+    box-sizing: border-box;
 }
 
+/* Top section with image and title */
 .shop-product img {
     width: 130px;
     height: auto;
-    margin-bottom: 16px;
     transition: transform 0.1s ease-in-out;
+    margin-bottom: 10px;
 }
 
 .shop-product h3 {
@@ -78,13 +82,63 @@
     margin: 8px 0;
 }
 
+/* Middle section with type */
+.shop-product p:not(.price) {
+    margin: 4px 0 0 0;
+}
+
+/* Bottom section with price and button */
 .shop-product .price {
     font-weight: bold;
-    margin: 8px 0 16px 0;
+    margin: 4px 0 12px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: flex-end;
+    min-height: 60px; /* Ensure consistent height for price section */
+}
+
+.shop-discount-label {
+    position: absolute;
+    left: 0;
+    bottom: 40%; /* Positioned similar to the index page label */
+    background-color: #FF5555;
+    color: white;
+    font-family: montserrat, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 12px;
+    z-index: 1;
+}
+
+.shop-product img, .shop-product h3, .shop-product p {
+    margin-bottom: 4px; /* Consistent small margins */
+}
+
+.shop-product .original-price {
+    text-decoration: line-through;
+    color: #888;
+    font-weight: normal;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.shop-product .regular-price {
+    font-size: 18px;
+    padding-top: 18px; /* Added padding to compensate for missing original price */
+    display: block;
+}
+
+.shop-product .discounted-price {
+    color: #FF5555;
+    font-size: 18px;
+    display: block;
 }
 
 .shop-product .btn {
-    margin-top: auto;
+    align-self: center;
 }
 
 /* Bundle and Tilbud sections - styled like the content sections from the landing page */
@@ -210,8 +264,6 @@
     margin: 16px 0;
     order: 3;
 }
-
-
 
 .bundle-section .price-container p,
 .Tilbud-section .price-container p {

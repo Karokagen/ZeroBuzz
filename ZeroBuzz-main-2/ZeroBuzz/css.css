@@ -238,6 +238,24 @@ footer {
     transform: scale(1.05);
 }
 
+.product {
+    position: relative;
+}
+
+.discount-label {
+    position: absolute;
+    left: -25%;
+    bottom: 40%; /* Positioned 1/5 up from the bottom */
+    background-color: #FF5555;
+    color: white;
+    font-family: montserrat, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 12px;
+    z-index: 1;
+}
+
 /* Baggrundsbillede */
 .pic {
     background: url('img/mockup_background_cropped2.webp') bottom center no-repeat;/* Full height, auto width - may crop horizontally */
